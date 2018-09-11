@@ -1,5 +1,72 @@
 # Python-mini-projects
 Python practice 
+44)
+ #C. sort_last
+# Given a list of non-empty tuples, return a list sorted in increasing
+# order by the last element in each tuple.
+# e.g. [(1, 7), (1, 3), (3, 4, 5), (2, 2)] yields
+# [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
+# Hint: use a custom key= function to extract the last element form each tuple.
+def last(t):
+    return t[-1]
+
+def sort_last(tuples):
+    return sorted(tuples, key=last)
+    
+
+
+
+
+43)
+#B. front_x
+# Given a list of strings, return a list with the strings
+# in sorted order, except group all the strings that begin with 'x' first.
+# e.g. ['mix', 'xyz', 'apple', 'xanadu', 'aardvark'] yields
+# Hint: this can be done by making 2 lists and sorting each of them
+# before combining them.
+  #print('front_x')
+  #test(front_x(['bbb', 'ccc', 'axx', 'xzz', 'xaa']), ['xaa', 'xzz', 'axx', 'bbb', 'ccc'])
+  #test(front_x(['ccc', 'bbb', 'aaa', 'xcc', 'xaa']), ['xaa', 'xcc', 'aaa', 'bbb', 'ccc'])
+  #test(front_x(['mix', 'xyz', 'apple', 'xanadu', 'aardvark']),['xanadu', 'xyz', 'aardvark', 'apple', 'mix'])*/
+
+def front_x(words):
+    
+    y=[]
+    
+    for x in words:
+        
+            if x[0]  == 'x':
+                y.append(x)
+                
+                
+    z = list(set(words) - set(y))     
+    y.sort()
+    z.sort()
+    print(y+z)
+
+
+
+
+42)
+
+# A. match_ends
+# Given a list of strings, return the count of the number of
+# strings where the string length is 2 or more and the first
+# and last chars of the string are the same.
+# Note: python does not have a ++ operator, but += works.
+def match_ends(words):
+    counter = 0
+    for x in words:
+        if len(x) >=2 and x[0] == x[-1]:
+            counter = counter + 1
+     
+        
+    print (counter)
+
+
+
+
+
 
 41)
 Write a method that takes input as a string (of many words) and
